@@ -1,4 +1,6 @@
 # Learn_C-Sharp
-A TDD apporach to learning C#
+The idea with this repository is to teach people C# through Test driven development.
 
 This should actually have been a fork of https://github.com/ultrasaurus/test-first-teaching but instead it is simply a copy of the concept. Many thanks to the authors of the concept:  Sarah Allen and Alex Chaffee
+
+In order to follow the course you should download/clone the repository. The repository consists of a number of unit tests grouped by theme and written in C#. It is now your job to write the necessary code to make them pass. Once you progress, only the point of the unit test will be written for you

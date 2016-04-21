@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSpec;
 
-namespace _01_Temperature
+namespace _05_Temperature
 {
     [TestClass]
     public class TemperatureTest 
@@ -52,9 +52,6 @@ namespace _01_Temperature
         {
             Assert.AreEqual(68, Temperature.CelciusToFahrenheit(20));
         }
-
-
-
-
+        
     }
 }

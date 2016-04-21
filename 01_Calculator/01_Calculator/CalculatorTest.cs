@@ -24,17 +24,37 @@ namespace _01_Calculator
             //Arrange
             int[] numbers = new int[] { };
             Assert.AreEqual(0, Calculator.Sum(numbers));
-            
+
             numbers[0] = 7;
             Assert.AreEqual(7, Calculator.Sum(numbers));
-            
+
             numbers[0] = 7;
             numbers[1] = 11;
             Assert.AreEqual(18, Calculator.Sum(numbers));
 
-
-
         }
-        
+        [TestMethod]
+        public void Multiply()
+        {
+            //It multiplies two numbers
+            //It multiplies several numbers
+        }
+        [TestMethod]
+        public void Power()
+        {
+            //It raises one number to the power of another number
+        }
+        [TestMethod]
+        public void Factorial()
+        {
+             //# http://en.wikipedia.org/wiki/Factorial
+            //  it "computes the factorial of 0"
+            //  it "computes the factorial of 1"
+            //  it "computes the factorial of 2"
+            //  it "computes the factorial of 5"
+            //  it "computes the factorial of 10"
+        }
+
+    }
     }
 }

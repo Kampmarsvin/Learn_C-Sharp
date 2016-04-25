@@ -38,23 +38,24 @@ namespace _01_Calculator
         {
             //It multiplies two numbers
             //It multiplies several numbers
+            throw new NotImplementedException();
         }
         [TestMethod]
         public void Power()
         {
             //It raises one number to the power of another number
+            throw new NotImplementedException();
         }
         [TestMethod]
         public void Factorial()
         {
-             //# http://en.wikipedia.org/wiki/Factorial
+            //# http://en.wikipedia.org/wiki/Factorial
             //  it "computes the factorial of 0"
             //  it "computes the factorial of 1"
             //  it "computes the factorial of 2"
             //  it "computes the factorial of 5"
             //  it "computes the factorial of 10"
+            throw new NotImplementedException();
         }
-
-    }
     }
 }

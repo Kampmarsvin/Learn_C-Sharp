@@ -72,10 +72,6 @@ get the tests to pass.</p>
     <h1>Tests</h1>
 <a class="raw_file" href="../01_Calculator/01_Calculator/CalculatorTest.cs">CalculatorTest.cs</a>
     <pre>
-      
-[TestClass]
-    public class CalculatorTest
-    {
         [TestMethod]
         public void Add()
         {
@@ -94,41 +90,45 @@ get the tests to pass.</p>
             //Arrange
             int[] numbers = new int[] { };
             Assert.AreEqual(0, Calculator.Sum(numbers));
-            
             numbers[0] = 7;
             Assert.AreEqual(7, Calculator.Sum(numbers));
-            
             numbers[0] = 7;
             numbers[1] = 11;
             Assert.AreEqual(18, Calculator.Sum(numbers));
-
         }
 
-# Extra Credit Test-Driving Bonus:
-# once the above tests pass,
-# write tests and code for the following:
+        // Extra Credit Test-Driving Bonus:
+// once the above tests pass,
+// write tests and code for the following:
+//(the throw new NotImplementedException() is there to force failure until you make the unit test pass.
+// Otherwise it could look like the name alone made it pass, so make sure you remove NotImplementedException() once you add your own logic.)
 
- [TestMethod]
+        [TestMethod]
         public void Multiply()
         {
             //It multiplies two numbers
             //It multiplies several numbers
+            throw new NotImplementedException();
         }
         [TestMethod]
         public void Power()
         {
             //It raises one number to the power of another number
+            throw new NotImplementedException();
         }
         [TestMethod]
         public void Factorial()
         {
-             //# http://en.wikipedia.org/wiki/Factorial
+            //# http://en.wikipedia.org/wiki/Factorial
             //  it "computes the factorial of 0"
             //  it "computes the factorial of 1"
             //  it "computes the factorial of 2"
             //  it "computes the factorial of 5"
             //  it "computes the factorial of 10"
-        }
+            throw new NotImplementedException();
+        }      
+
+ 
 </pre>
   </div>
 </div>

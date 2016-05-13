@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49660229-6196-4C84-9021-92F07A4CCD59}</ProjectGuid>
+    <ProjectGuid>{295ED4CB-52F4-418C-9AD5-27A26C2B2A72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01_Temperature</RootNamespace>
-    <AssemblyName>01_Temperature</AssemblyName>
+    <RootNamespace>_04_Pig_Latin</RootNamespace>
+    <AssemblyName>04_Pig_Latin</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,11 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TemperatureTest.cs" />
+    <Compile Include="PigLatinTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

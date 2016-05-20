@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Test-First Teaching: learn_c-sharp: pig latin</title>
+    <title>Test-First Teaching: learn_c-sharp: temperature</title>
     <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -13,11 +13,11 @@
         <b>Labs:</b>
         <ul>
             <li><a href="../00_hello/index.html">00 Hello</a></li>
-            <li><a href=" ../01_Calculator/index.html"</a>01_Calculator</li>
-            <li><a href="../02_Bottles/index.html"></a>02 Bottles</li>
-            <li><a href="../03_Simon_Says/index.html">04 Simon Says</a></li>
-            <li>04 Pig Latin</li>
-            <li><a href="../05_temperature/index.html">05 Temperature</a></li>
+            <li><a href="../01_Calculator/index.html">01 Calculator</a></li>
+            <li><a href="../02_Bottles/index.html">02 Bottles</a></li>
+            <li><a href="../03_Simon_Says/index.html">03 Simon Says</a></li>
+            <li><a href="../04_Pig_Latin/index.html">04 Pig Latin</a></li>
+            <li>05 temperature</li>
             <li><a href="../06_book_titles/index.html">06 Book titles</a></li>
             <li><a href="../07_timer/index.html">07 Timer</a></li>
             <li><a href="../08_dictionary/index.html">08 Dictionary</a></li>
@@ -33,88 +33,126 @@
         <div class="rspec_file">
             <div class="intro">
                 <p>
-                    Pig Latin
-
-                    Pig Latin is a made-up children's language that's intended to be confusing. It obeys a few simple rules (below) but when it's spoken quickly
-                    it's really difficult for non-children (and non-native speakers) to understand.
-                    Rule 1: If a word begins with a vowel sound, add an "ay" sound to the end of the word.
-                    Rule 2: If a word begins with a consonant sound, move it to the end of the word, and then add an "ay" sound to the end of the word.
-                    (There are a few more rules for edge cases, and there are regional variants too, but that should be enough to understand the tests.)
-                    See <http://en.wikipedia.org/wiki/Pig_latin> for more details.
+                    # # Hints
+                    #
+                    # Remember that one degree fahrenheit is 5/9 of one degree celsius, and that the freezing point of water is 0 degrees celsius but 32 degrees fahrenheit.
+                    #
+                    # Remember to define the `from_celsius` factory method as a *class* method, not an *instance* method.
+                    #
+                    # The temperature object's constructor should accept an *options hash* which contains either a `:celcius` entry or a `:fahrenheit` entry.
+                    #
                 </p>
 
                 <h1>Topics</h1>
 
                 <ul>
-                    <li>strings</li>
+                    <li>floating-point math</li>
+                    <li>
+                        objects
+                    </li>
+                    <li>
+                        constructors
+                    </li>
+                    <li>
+                        class methods
+                    </li>
+                    <li>
+                        factory methods
+                    </li>
                 </ul>
 
 
-                <h1>Simon Says</h1>
+                <h1>Temperature</h1>
 
 
             </div>
             <div class="tests">
                 <h1>Tests</h1>
-                <a class="raw_file" href="../04_Pig_Latin/04_Pig_Latin/PigLatinTests.cs">PigLatinTests.cs</a>
+                <a class="raw_file" href="../05_Temperature/05_Temperature/TemperatureTests.cs">TemperatureTests.cs</a>
                 <pre>
-                                                                 [TestMethod]
-        public void TranslateWordBeginningWithAVowel()
+
+                                                         [TestClass]
+    public class TemperatureTest
+    {
+        //STATIC CLASSES
+        //Fahrenheit to celcius
+        [TestMethod]
+        public void ConvertFreezingTemperatureFTOC()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("appleay", translator.Translate("apple"));
+            Assert.AreEqual(0, Temperature.FahrenheitToCelcius(32));
         }
         [TestMethod]
-        public void TranslateWordBeginningWithAConsonant()
+        public void ConvertBoilingTemperatureFTOC()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("ananabay", translator.Translate("banana"));
+            Assert.AreEqual(100, Temperature.FahrenheitToCelcius(212));
         }
         [TestMethod]
-        public void TranslateWordBeginningWithTwoConsonants()
+        public void ConvertBodyTemperatureFTOC()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("errychay", translator.Translate("cherry"));
+            Assert.AreEqual(37, Temperature.FahrenheitToCelcius(98.6));
         }
         [TestMethod]
-        public void TranslateTwoWords()
+        public void ConvertAbitraryTemperatureFTOC()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("eatay iepay", translator.Translate("eat pie"));
+            Assert.AreEqual(20, Temperature.FahrenheitToCelcius(68));
+        }
+        //Celcius to Fahrenheit
+        [TestMethod]
+        public void ConvertFreezingTemperatureCTOF()
+        {
+            Assert.AreEqual(32, Temperature.CelciusToFahrenheit(0));
         }
         [TestMethod]
-        public void TranslateWordBeginningWithThreeConsonants()
+        public void ConvertBoilingTemperatureCTOF()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("eethray", translator.Translate("three"));
+            Assert.AreEqual(212, Temperature.CelciusToFahrenheit(100));
         }
         [TestMethod]
-        public void Count_SCH_AsASinglePhoneme()
+        public void ConvertBodyTemperatureCTOF()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("oolschay", translator.Translate("school"));
+            Assert.AreEqual(98.6, Temperature.CelciusToFahrenheit(37));
         }
         [TestMethod]
-        public void Count_QU_AsASinglePhoneme()
+        public void ConvertArbitraryTemperatureCTOF()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("ietquay", translator.Translate("quiet"));
+            Assert.AreEqual(68, Temperature.CelciusToFahrenheit(20));
+        }
+        //INSTANCE CLASSES
+        //Through properties & constructors
+        [TestMethod]
+        public void CanSaveDataInFahrenheitProperty()
+        {
+            var temp = new Temperature();
+            temp.Fahrenheit = 32;
+            Assert.AreEqual(32, Temperature.Fahrenheit);
         }
         [TestMethod]
-        public void Count_QU_AsAConsonantEvenWhenPreceededByAConsonant()
+        public void CanSaveDataInCelciusProperty()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("aresquay", translator.Translate("square"));
+            var temp = new Temperature();
+            temp.Celcius = 0;
+            Assert.AreEqual(0, Temperature.Celcius);
         }
         [TestMethod]
-        public void TranslateManyWords()
+        public void CanBeConstructedViaConstructor()
         {
-            Translator translator = new Translator();
-            Assert.AreEqual("ethay ickquay ownbray oxfay", translator.Translate("the quick brown fox"));
+            var temp = new Temperature(Unit.Celcius, 20);
+            Assert.AreEqual(20, Temperature.Celcius);
         }
-        //Test-driving bonus:
-        // write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-        // retain the punctuation from the original phrase
+        //# test-driving bonus:
+        //#
+        //# refactor to call CelciusToFahrenheit and FahrenheitToCelcius from the rest of the object
+        //#
+        //# run *all* the tests during your refactoring, to make sure you did it right
+        //#
+        //Test driven bonus. If you have read about factory methods try solving the problem below
+        [TestMethod]
+        public void CanBeConstructedViaFactoryMethod()
+        {
+            Assert.AreEqual(100, TemperatureFactory.Get(Unit.Celcius, 212));
+            Assert.AreEqual(212, TemperatureFactory.Get(Unit.Fahrenheit, 100));
+        }
+    }
  
 </pre>
             </div>

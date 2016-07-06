@@ -1,0 +1,6 @@
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+c:\users\sist\documents\visual studio 2015\Projects\08_Orange_Tree\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

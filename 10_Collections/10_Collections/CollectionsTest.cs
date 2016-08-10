@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 namespace _10_Collections
 {
+    //THESE ARE THE FIRST TESTS YOU SHOULD DO 
+
     [TestClass]
     public class CollectionsTest
     {
@@ -85,8 +87,7 @@ namespace _10_Collections
             portfolio.AddAsset(stockIBM);
             portfolio.AddAsset(stockHP);
             portfolio.AddAsset(stockYHOO);
-            portfolio.AddAsset(s);
-
+            
             IList<Asset> stocks = portfolio.GetAssetsSortedByValue();
             Assert.AreEqual(stockYHOO, stocks[0]);
             Assert.AreEqual(stockHP, stocks[1]);

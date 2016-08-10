@@ -15,6 +15,7 @@ namespace _10_Collections
             PricePerShare = v2;
             NumShares = v3;
         }
+        public long Id { get; set; }
 
         public string Symbol { get; set; }
 

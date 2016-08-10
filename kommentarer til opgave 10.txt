@@ -1,0 +1,4 @@
+Formålet med opgave 10 er at vise, hvordan man laver en wrapper/facade, 
+som begrænser brugeren i at ændre direkte på det underliggende objekt. Og
+Samtidig gør systemet mere compatibelt med andre programmer, da det
+bruger et kendt interface

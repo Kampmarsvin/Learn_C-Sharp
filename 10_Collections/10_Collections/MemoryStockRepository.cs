@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _10_Collections
 {
-    public class MemoryStockRepository
+    public class MemoryStockRepository : IStockRepository
     {
         long id = 0;
         IDictionary contents = new Dictionary<long, Stock>();
@@ -17,7 +17,7 @@ namespace _10_Collections
             return ++id;
         }
 
-        internal void SaveStock(Stock stock)
+        public void SaveStock(Stock stock)
         {
             if (stock.Id == 0)
             {
@@ -27,17 +27,17 @@ namespace _10_Collections
             contents.Add(stock.Id, stock);
         }
 
-        internal Stock LoadStock(long id)
+        public Stock LoadStock(long id)
         {
             return (Stock)contents[id];
         }
 
-        internal ICollection FindAllStocks()
+        public ICollection FindAllStocks()
         {
             return contents.Values;
         }
 
-        internal void Clear()
+        public void Clear()
         {
             contents = new Dictionary<long, Stock>();
             id = 0;

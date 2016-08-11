@@ -29,8 +29,7 @@ namespace _10_Collections
         [TestMethod]
         public void FindNextId()
         {
-
-            MemoryStockRepository repository = new MemoryStockRepository();
+            IStockRepository repository = new MemoryStockRepository();
             long id1 = repository.NextId();
             Assert.IsTrue(id1 != 0);
             long id2 = repository.NextId();
@@ -41,7 +40,7 @@ namespace _10_Collections
         [TestMethod]
         public void CanSaveAndLoad()
         {
-            MemoryStockRepository repository = new MemoryStockRepository();
+            IStockRepository repository = new MemoryStockRepository();
             repository.SaveStock(yhoo);
             long id = yhoo.Id;
             Stock loaded = repository.LoadStock(id);
@@ -51,7 +50,7 @@ namespace _10_Collections
         [TestMethod]
         public void CanSaveAfterChangeWithoutError()
         {
-            MemoryStockRepository repository = new MemoryStockRepository();
+            IStockRepository repository = new MemoryStockRepository();
             repository.SaveStock(yhoo);
             yhoo.NumShares = 120;
             repository.SaveStock(yhoo);
@@ -62,7 +61,7 @@ namespace _10_Collections
         [TestMethod]
         public void CanFindAllStocks()
         {
-            MemoryStockRepository repository = new MemoryStockRepository();
+            IStockRepository repository = new MemoryStockRepository();
             ICollection stocks;
             stocks = repository.FindAllStocks();
             Assert.AreEqual(0, stocks.Count);
@@ -79,7 +78,7 @@ namespace _10_Collections
         [TestMethod]
         public void CanClearRepository()
         {
-            MemoryStockRepository repository = new MemoryStockRepository();
+            IStockRepository repository = new MemoryStockRepository();
             repository.SaveStock(yhoo);
             repository.SaveStock(hp);
             repository.Clear();
@@ -87,5 +86,7 @@ namespace _10_Collections
             stocks = repository.FindAllStocks();
             Assert.AreEqual(0, stocks.Count);
         }
+
+        
     }
 }

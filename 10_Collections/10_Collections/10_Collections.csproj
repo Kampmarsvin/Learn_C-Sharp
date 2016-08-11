@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Asset.cs" />
     <Compile Include="CollectionsTest.cs" />
+    <Compile Include="IStockRepository.cs" />
     <Compile Include="MemoryStockRepository.cs" />
     <Compile Include="MemoryStockRepositoryTests.cs" />
     <Compile Include="Portfolio.cs" />

@@ -9,6 +9,7 @@ namespace _10_Collections
 
     //When we don't have a database, we can use an in-memory repository instead to load and save data.
     //The repository will later serve as a medium between our program and the database. This is called the repository pattern.
+    //The tests automatically force you to create an interface which can be used in the next assignment
 
 
     [TestClass]

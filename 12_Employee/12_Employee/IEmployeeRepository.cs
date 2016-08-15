@@ -10,7 +10,7 @@ namespace _12_Employee
     {
          void Clear();
          int CountEmployees();
-         Employee CreateEmployee(String name, String type);
+         Employee CreateEmployee(string name, string type);
          void SaveEmployee(Employee employee);
          Employee LoadEmployee(int id);
          List<Employee> FindAllEmployees();

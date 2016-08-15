@@ -18,7 +18,7 @@ namespace _12_Employee
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
             Assert.AreEqual(0, repository.CountEmployees());
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
             Assert.AreEqual(1, repository.CountEmployees());
             repository.Clear();
             Assert.AreEqual(0, repository.CountEmployees());
@@ -30,13 +30,13 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
-            Assert.AreEqual("Alex Chaffee", alex.Name);
-            Assert.AreEqual("Teacher", alex.Type);
-            Assert.IsTrue(alex.Id != 0);
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            Assert.AreEqual("simon Chaffee", simon.Name);
+            Assert.AreEqual("Teacher", simon.Type);
+            Assert.IsTrue(simon.Id != 0);
             Employee nick = repository.CreateEmployee("Nick Chaffee", "Translator");
             Assert.IsTrue(nick.Id != 0);
-            Assert.IsTrue(nick.Id != alex.Id);
+            Assert.IsTrue(nick.Id != simon.Id);
         }
 
         [TestMethod]
@@ -44,8 +44,8 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
-            repository.SaveEmployee(alex);
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            repository.SaveEmployee(simon);
             Assert.AreEqual(1, repository.CountEmployees());
             
         }
@@ -55,10 +55,10 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
-            repository.SaveEmployee(alex);
-            Employee loadedAlex = repository.LoadEmployee(alex.Id);
-            Assert.AreEqual(alex, loadedAlex);
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            repository.SaveEmployee(simon);
+            Employee loadedsimon = repository.LoadEmployee(simon.Id);
+            Assert.AreEqual(simon, loadedsimon);
             
         }
 
@@ -67,8 +67,8 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
-            repository.SaveEmployee(alex);
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            repository.SaveEmployee(simon);
             Employee nick = repository.CreateEmployee("Nick Chaffee", "Translator");
             repository.SaveEmployee(nick);
             Assert.AreEqual(2, repository.CountEmployees());
@@ -82,13 +82,13 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
-            repository.SaveEmployee(alex);
+            Employee simon = repository.CreateEmployee("Simon Stochholm", "Teacher");
+            repository.SaveEmployee(simon);
             Employee nick = repository.CreateEmployee("Nick Chaffee", "Translator");
             repository.SaveEmployee(nick);
 
             List<Employee> all = repository.FindAllEmployees();
-            CollectionAssert.Contains(all, alex);
+            CollectionAssert.Contains(all, simon);
             CollectionAssert.Contains(all, nick);
             
         }

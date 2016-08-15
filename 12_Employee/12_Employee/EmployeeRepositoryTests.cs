@@ -18,7 +18,7 @@ namespace _12_Employee
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
             Assert.AreEqual(0, repository.CountEmployees());
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             Assert.AreEqual(1, repository.CountEmployees());
             repository.Clear();
             Assert.AreEqual(0, repository.CountEmployees());
@@ -30,7 +30,7 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             Assert.AreEqual("Alex Chaffee", alex.Name);
             Assert.AreEqual("Teacher", alex.Type);
             Assert.IsTrue(alex.Id != 0);
@@ -44,7 +44,7 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             repository.SaveEmployee(alex);
             Assert.AreEqual(1, repository.CountEmployees());
             
@@ -55,7 +55,7 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             repository.SaveEmployee(alex);
             Employee loadedAlex = repository.LoadEmployee(alex.Id);
             Assert.AreEqual(alex, loadedAlex);
@@ -67,7 +67,7 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             repository.SaveEmployee(alex);
             Employee nick = repository.CreateEmployee("Nick Chaffee", "Translator");
             repository.SaveEmployee(nick);
@@ -82,7 +82,7 @@ namespace _12_Employee
         {
             EmployeeRepository repository = CreateRepository();
             repository.Clear();
-            Employee alex = repository.CreateEmployee("Alex Chaffee", "Teacher");
+            Employee alex = repository.CreateEmployee("Simon Stochholm", "Teacher");
             repository.SaveEmployee(alex);
             Employee nick = repository.CreateEmployee("Nick Chaffee", "Translator");
             repository.SaveEmployee(nick);
